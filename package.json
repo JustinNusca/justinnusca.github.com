@@ -1,0 +1,48 @@
+{
+  "name": "justinnusca.github.io",
+  "version": "1.0.0",
+  "description": "Personal Website for Justin Nusca, Front-end Developer and Web Designer based out of Vancouver, Canada.",
+  "main": "app.js",
+  "scripts": {
+    "build": "webpack --progress --watch",
+    "deploy": "NODE_ENV=production webpack -p; gh-pages -d build -b master",
+    "dev": "webpack-dev-server --history-api-fallback --inline --progress --host 0.0.0.0",
+    "lint": "eslint src --ext .js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://justin-nusca@bitbucket.org/justin-nusca/resume.git"
+  },
+  "author": "Justin Nusca",
+  "license": "ISC",
+  "homepage": "http://justinnusca.github.io",
+  "devDependencies": {
+    "autoprefixer": "^6.5.4",
+    "babel-core": "^6.20.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.9",
+    "babel-preset-es2015-native-modules": "^6.9.4",
+    "clean-webpack-plugin": "^0.1.14",
+    "css-loader": "^0.26.1",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
+    "file-loader": "^0.9.0",
+    "gh-pages": "^0.12.0",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.24.1",
+    "node-sass": "^4.0.0",
+    "postcss-loader": "^1.2.1",
+    "sass-loader": "^4.1.0",
+    "style-ext-html-webpack-plugin": "^3.0.4",
+    "style-loader": "^0.13.1",
+    "svgo-loader": "^1.1.2",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.1.0-beta.28",
+    "webpack-dev-server": "^2.2.0-rc.0"
+  }
+}
