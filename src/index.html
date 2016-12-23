@@ -47,85 +47,83 @@
       </div><img alt="A handsome photograph of me." class="about__photo" src="./assets/me.jpg" />
     </article>
 
-    <section class="contact">
-      <form action="https://formspree.io/njustin@gmail.com" class="contact__form" id="form" method="POST">
-        <h2 class="contact__title">Drop Me a Line</h2>
-        <div class="contact__form-feedback"></div>
-        <input name="_subject" type="hidden" value="Hi there!" />
-        <input name="_gotcha" style="display:none" type="text" />
+    <form action="https://formspree.io/njustin@gmail.com" class="contact" id="form" method="POST">
+      <h2 class="contact__title">Drop Me a Line</h2>
+      <div class="contact__feedback"></div>
+      <input name="_subject" type="hidden" value="Hi there!" />
+      <input name="_gotcha" style="display:none" type="text" />
 
-        <div class="contact__form-section">
-          <label
-            class="contact__form-label"
-            data-anim-direction="in"
-            data-anim-name="show"
-            data-anim-type="scroll"
-            for="name"
+      <div class="contact__section">
+        <label
+          class="contact__label"
+          data-anim-direction="in"
+          data-anim-name="show"
+          data-anim-type="scroll"
+          for="name"
+        >
+          Name
+        </label>
+
+        <input
+          class="contact__field"
+          id="name"
+          name="name"
+          placeholder="Your Name"
+          required
+          spellcheck="false"
+        />
+
+        <label
+          class="contact__label"
+          data-anim-direction="in"
+          data-anim-name="show"
+          data-anim-type="scroll"
+          for="email"
           >
-            Name
-          </label>
+            Email
+        </label>
 
-          <input
-            class="contact__form-field"
-            id="name"
-            name="name"
-            placeholder="Your Name"
-            required
-            spellcheck="false"
-          />
+        <input
+          class="contact__field"
+          id="email"
+          name="email"
+          placeholder="you@areawesome.com"
+          required
+          spellcheck="false"
+          type="email"
+        />
+      </div><div class="contact__section">
+        <label
+          class="contact__label"
+          data-anim-direction="in"
+          data-anim-name="show"
+          data-anim-type="scroll"
+          for="message"
+        >
+          Message
+        </label>
 
-          <label
-            class="contact__form-label"
-            data-anim-direction="in"
-            data-anim-name="show"
-            data-anim-type="scroll"
-            for="email"
-            >
-              Email
-          </label>
+        <textarea
+          class="contact__message"
+          id="message"
+          name="message"
+          placeholder="Hi there!"
+          required
+        ></textarea>
 
-          <input
-            class="contact__form-field"
-            id="email"
-            name="email"
-            placeholder="you@areawesome.com"
-            required
-            spellcheck="false"
-            type="email"
-          />
-        </div><div class="contact__form-section">
-          <label
-            class="contact__form-label"
-            data-anim-direction="in"
-            data-anim-name="show"
-            data-anim-type="scroll"
-            for="message"
-          >
-            Message
-          </label>
-
-          <textarea
-            class="contact__form-message"
-            id="message"
-            name="message"
-            placeholder="Hi there!"
-            required
-          ></textarea>
-
-          <button
-            class="contact__form-submit"
-            id="form-submit"
-            form="form"
-            type="submit"
-            value="Send"
-          >
-            Send
-            <div class="contact__form-icon--spinner"></div>
-            <div class="contact__form-icon--success">✔</div>
-          </button>
-        </div>
-      </form>
-    </section>
+        <button
+          class="contact__submit"
+          id="form-submit"
+          form="form"
+          type="submit"
+          value="Send"
+        >
+          Send
+          <div class="contact__icon--spinner"></div>
+          <div class="contact__icon--success">✔</div>
+        </button>
+      </div>
+    </form>
 
     <ul class="social-links" data-anim-name="show" data-anim-type="scroll" data-anim-direction="in">
       <li class="social-link">

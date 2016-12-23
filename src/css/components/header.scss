@@ -3,31 +3,20 @@
   background: color(bg, header);
   border-top: 0.2em solid color(font, highlight);
   box-shadow: inset 0 -20em 20em -10em darken(color(bg, header), 5%);
-  padding: 6em 0 2rem 0;
+  padding: $breakpoint__unit--padding 5%;
   position: relative;
   text-align: center;
 }
 
-// .header.lights-out::after {
-//   background: rgba(0,0,0,0.5);
-//   bottom: 0;
-//   content: '';
-//   left: 0;
-//   margin: auto;
-//   position: absolute;
-//   right: 0;
-//   top: 0;
-// }
-
 .header__title {
   display: inline-block;
-  padding: 0 0 $breakpoint__unit--padding;
+  margin-bottom: $breakpoint__unit--padding;
+  width: 15em;
 }
 
 .header__name {
   color: color(bg, content);
   font-size: 2.5em;
-  padding: 0 1em;
   position: relative;
 
   .header__title:not(.show) & { opacity: 0; }

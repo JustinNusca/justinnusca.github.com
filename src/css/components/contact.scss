@@ -1,11 +1,12 @@
 .contact {
   @include content-cntnr;
   background: color(bg, content);
+  padding-top: 0;
 }
 
 .contact__title { @include content-title; }
 
-.contact__form-section {
+.contact__section {
   display: inline-block;
   transition: transform 0.3s ease;
   vertical-align: top;
@@ -22,16 +23,16 @@
     width: 100%;
   }
 
-  .contact__form:not(.fail) &, .contact__form:not(.success) & {
+  .contact:not(.fail) &, .contact:not(.success) & {
     transform: translate3D(0, -1.5em, 0);
   }
 
-  .contact__form.fail &, .contact__form.success & {
+  .contact.fail &, .contact.success & {
     transform: none;
   }
 }
 
-.contact__form-label {
+.contact__label {
   color: color(font, highlight);
   display: block;
   transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
@@ -41,7 +42,7 @@
   &.show { opacity: 1; transform: none; }
 }
 
-.contact__form-feedback {
+.contact__feedback {
   align-items: center;
   border: 0.2em solid transparent;
   display: flex;
@@ -58,12 +59,12 @@
   @include breakpoint--medium-and-down { width: 100%; }
   @include breakpoint--tiny { height: 4em; }
 
-  .contact__form:not(.fail) &, .contact__form:not(.success) & {
+  .contact:not(.fail) &, .contact:not(.success) & {
     opacity: 0;
     transform: translate3D(0, 1.5em, 0);
   }
 
-  .contact__form.fail & {
+  .contact.fail & {
     background-color: lighten(color(states, invalid), 50%);
     border-color: color(states, invalid);
     color: color(states, invalid);
@@ -71,7 +72,7 @@
     transform: none;
   }
 
-  .contact__form.success & {
+  .contact.success & {
     background-color: lighten(color(states, valid), 32%);
     border-color: color(states, valid);
     color: color(states, valid);
@@ -80,7 +81,7 @@
   }
 }
 
-.contact__form-field {
+.contact__field {
   appearance: none;
   border: none;
   border-bottom: 0.2em solid color(bg, highlight);
@@ -100,7 +101,7 @@
   &:not(:focus):valid { border-bottom-color: color(states, valid); }
 }
 
-.contact__form-message {
+.contact__message {
   appearance: none;
   border: 0.2em solid color(bg, highlight);
   border-radius: 0;
@@ -118,7 +119,7 @@
   }
 }
 
-.contact__form-submit {
+.contact__submit {
   appearance: none;
   background: transparent;
   border: 0.2rem solid color(font, activeLink);
@@ -139,19 +140,19 @@
     outline: 0;
   }
 
-  .contact__form.success & {
+  .contact.success & {
     background: color(states, valid);
     border-color: color(states, valid);
     color: color(states, valid);
   }
 
-  .contact__form.loading & {
+  .contact.loading & {
     background: color(font, activeLink);
     color: color(font, activeLink);
   }
 }
 
-.contact__form-icon--spinner {
+.contact__icon--spinner {
   height: 100%;
   left: 0;
   opacity: 0;
@@ -178,7 +179,7 @@
   }
 
 
-  .contact__form.loading & {
+  .contact.loading & {
     opacity: 1;
     transform: none;
 
@@ -187,13 +188,13 @@
     }
   }
 
-  .contact__form.success & {
+  .contact.success & {
     opacity: 0;
     transform: translate3D(-50%, 0, 0);
   }
 }
 
-.contact__form-icon--success {
+.contact__icon--success {
   bottom: 0;
   color: color(bg, content);
   content: '';
@@ -210,7 +211,7 @@
   transition: opacity 0.2s ease, transform 0.2s ease;
   width: 2rem;
 
-  .contact__form.success & {
+  .contact.success & {
     opacity: 1;
     transform: none;
   }

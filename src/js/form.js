@@ -1,5 +1,5 @@
-export const formClassName = '.contact__form';
-const feedbackMsgClassName = '.contact__form-feedback';
+export const formClassName = '.contact';
+const feedbackMsgClassName = '.contact__feedback';
 
 const feedbackMsgs = {
   fail: '😩 Sorry, that didn’t work. Try again?',
