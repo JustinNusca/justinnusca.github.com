@@ -60,7 +60,10 @@ class Prop {
   }
 
   update() {
-    if (!this.started) { this.animation.start(); }
+    if (!this.started) {
+      this.started = true;
+      this.animation.start();
+    }
   }
 }
 
