@@ -1,3 +1,6 @@
+// eslint-disable-next-line
+import 'static-loader!./CNAME?output=CNAME';
+
 import DomAnimManager from './js/dom_animator';
 import Scene from './js/scene';
 import onFormSubmit, { formClassName } from './js/form';

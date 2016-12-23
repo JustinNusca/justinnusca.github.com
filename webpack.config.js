@@ -51,7 +51,7 @@ if (!IS_PRODUCTION) {
 }
 
 module.exports = {
-  devtool: 'eval-source-map',
+  devtool: IS_PRODUCTION ? 'nosources-source-map' : 'eval-source-map',
   entry: {
     app: path.resolve(PATHS.src, 'app.js'),
   },
@@ -62,6 +62,10 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /(CNAME)$/,
+        loader: 'static-loader',
+        query: { output: 'CNAME' },
+      }, {
         test: /\.(gif|jpeg|jpg|png|svg)$/,
         loader: 'url-loader',
         query: { limit: 10000, name: 'assets/[name].[hash:8].[ext]' },

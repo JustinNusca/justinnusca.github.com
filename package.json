@@ -38,6 +38,7 @@
     "node-sass": "^4.0.0",
     "postcss-loader": "^1.2.1",
     "sass-loader": "^4.1.0",
+    "static-loader": "^0.1.8",
     "style-ext-html-webpack-plugin": "^3.0.4",
     "style-loader": "^0.13.1",
     "svgo-loader": "^1.1.2",
