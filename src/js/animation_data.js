@@ -23,8 +23,8 @@ export const ACTOR_ANIMATION_DATA = {
     totalCols: 9,
     totalFrames: 9,
     totalRows: 6,
-    xScale: 10,
-    yScale: 1.02,
+    xScale: 7.5, // 3000 / 400
+    yScale: 1.02, // 1000 / 980
   },
   DESK: {
     frameRate: 10,
@@ -35,7 +35,7 @@ export const ACTOR_ANIMATION_DATA = {
     totalCols: 4,
     totalFrames: 4,
     totalRows: 2,
-    xScale: 4.44, // 4000 / 900
+    xScale: 3.33, // 3000 / 900
     yScale: 1.06, // 1000 / 940
   },
   DOOR: {
@@ -46,7 +46,7 @@ export const ACTOR_ANIMATION_DATA = {
     totalCols: 11,
     totalFrames: 11,
     totalRows: 1,
-    xScale: 7.14, // 4000 / 560
+    xScale: 5.36, // 3000 / 560
     yScale: 1, // 1000 / 1000
   },
   IDLE_START: {
@@ -58,8 +58,8 @@ export const ACTOR_ANIMATION_DATA = {
     totalCols: 9,
     totalFrames: 7,
     totalRows: 6,
-    xScale: 10,
-    yScale: 1.02,
+    xScale: 7.5, // 3000 / 400
+    yScale: 1.02, // 1000 / 980
   },
   IDLE_ACTIVE: {
     flippable: true,
@@ -71,8 +71,8 @@ export const ACTOR_ANIMATION_DATA = {
     totalCols: 9,
     totalFrames: 8,
     totalRows: 6,
-    xScale: 10,
-    yScale: 1.02,
+    xScale: 7.5, // 3000 / 400
+    yScale: 1.02, // 1000 / 980
   },
   IDLE_END: {
     flippable: true,
@@ -83,8 +83,8 @@ export const ACTOR_ANIMATION_DATA = {
     totalCols: 9,
     totalFrames: 7,
     totalRows: 6,
-    xScale: 10,
-    yScale: 1.02,
+    xScale: 7.5, // 3000 / 400
+    yScale: 1.02, // 1000 / 980
   },
   STAND: {
     flippable: true,
@@ -96,8 +96,8 @@ export const ACTOR_ANIMATION_DATA = {
     totalCols: 9,
     totalFrames: 4,
     totalRows: 6,
-    xScale: 10,
-    yScale: 1.02,
+    xScale: 7.5, // 3000 / 400
+    yScale: 1.02, // 1000 / 980
   },
   WALK: {
     duration: 20000,
@@ -110,8 +110,8 @@ export const ACTOR_ANIMATION_DATA = {
     totalCols: 9,
     totalFrames: 7,
     totalRows: 6,
-    xScale: 10,
-    yScale: 1.02,
+    xScale: 7.5, // 3000 / 400
+    yScale: 1.02, // 1000 / 980
   },
 };
 
@@ -125,7 +125,7 @@ export const PROP_ANIMATION_DATA = {
     totalCols: 3,
     totalFrames: 3,
     totalRows: 1,
-    xScale: 8.7, // 4000 / 460
+    xScale: 6.52, // 3000 / 460
     yScale: 1.32, // 1000 / 760
   },
   DESK: {
@@ -137,7 +137,7 @@ export const PROP_ANIMATION_DATA = {
     totalCols: 4,
     totalFrames: 1,
     totalRows: 2,
-    xScale: 4.44, // 4000 / 900
+    xScale: 3.33, // 3000 / 900
     yScale: 1.06, // 1000 / 940
   },
   DOOR: {
@@ -149,7 +149,7 @@ export const PROP_ANIMATION_DATA = {
     totalCols: 11,
     totalFrames: 1,
     totalRows: 1,
-    xScale: 7.14, // 4000 / 560
+    xScale: 5.36, // 3000 / 560
     yScale: 1, // 1000 / 1000
   },
   WINDOW: Object.assign({
@@ -159,7 +159,7 @@ export const PROP_ANIMATION_DATA = {
     static: true,
     totalCols: 4,
     totalRows: 3,
-    xScale: 7.69, // 4000 / 520
+    xScale: 5.77, // 3000 / 520
     yScale: 2, // 1000 / 500
   }, getWindowAnimationDataForTime()),
 };

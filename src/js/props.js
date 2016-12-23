@@ -13,25 +13,25 @@ export const PROP_DATA = {
   [PROP_REFERENCES.DOOR]: {
     reference: PROP_REFERENCES.DOOR,
     spriteReference: SPRITE_REFERENCES.DOOR,
-    x: 0.43, // 1720 / 4000
+    x: 0.31, // 940 / 3000
     y: 0, // 0 / 1000
   },
   [PROP_REFERENCES.COFFEE]: {
     reference: PROP_REFERENCES.COFFEE,
     spriteReference: SPRITE_REFERENCES.COFFEE,
-    x: 0.16, // 640 / 4000
+    x: 0.07, // 200 / 3000
     y: 0.24, // 240 / 1000
   },
   [PROP_REFERENCES.WINDOW]: {
     reference: PROP_REFERENCES.WINDOW,
     spriteReference: SPRITE_REFERENCES.WINDOW,
-    x: 0.81, // 3260 / 4000
+    x: 0.81, // 2420 / 3000
     y: 0.08, // 80 / 1000
   },
   [PROP_REFERENCES.DESK]: {
     reference: PROP_REFERENCES.DESK,
     spriteReference: SPRITE_REFERENCES.DESK,
-    x: 0.65, // 2600 / 4000
+    x: 0.54, // 1620 / 3000
     y: 0.06, // 60 / 1000
   },
 };
