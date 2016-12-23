@@ -1,0 +1,59 @@
+// COLORS
+$clr__dark-purple: #444F5D;
+$clr__light-pink: #F19B9F;
+
+$colors: (
+  bg: (
+    content: #FFF,
+    default: #EEEFEF,
+    footer: $clr__dark-purple,
+    header: $clr__dark-purple,
+    highlight: #E0E0E0,
+  ),
+  brands: (
+    default: #FFF,
+    facebook: #3B5998,
+    linkedin: #0077B5,
+    twitter: #55ACEE,
+  ),
+  font: (
+    activeLink: $clr__light-pink,
+    default: $clr__dark-purple,
+    headline: #E27A7F,
+    highlight: $clr__light-pink,
+  ),
+  states: (
+    valid: #66DCB8,
+    invalid: #DC1565,
+  ),
+  link: (
+    active: $clr__light-pink,
+    default: darken($clr__light-pink, 10%),
+  )
+);
+
+@function color($category, $type: 'default') {
+  @return map-get(map-get($colors, $category), $type);
+}
+
+// TYPOGRAPHY
+$fonts: (
+  body: ('Quicksand', 'Helvetica Neue', Helvetica, Arial, sans-serif),
+  headline: ('Oswald', 'Helvetica Neue', Helvetica, Arial, sans-serif)
+);
+
+@function font($category) {
+  @return map-get($fonts, $category);
+};
+
+// STUFF
+@mixin content-cntnr() {
+  margin: 0 auto;
+  max-width: $breakpoint__width--large;
+  padding: $breakpoint__unit--padding 10%;
+}
+
+@mixin content-title() {
+  color: color(font, headline);
+  margin-bottom: 1em;
+}
