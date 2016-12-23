@@ -1,0 +1,34 @@
+.about {
+  @include content-cntnr;
+  background: color(bg, content);
+}
+
+.about__title { @include content-title; }
+
+.about__bio {
+  display: inline-block;
+  padding-right: 5%;
+  width: 65%;
+
+  @include breakpoint--small-and-down {
+    margin-bottom: 2rem; padding: 0; width: 100%;
+  }
+}
+
+.about__photo {
+  border-radius: 50%;
+  box-shadow: 0 0 0 color(bg, highlight);
+  width: 35%;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  vertical-align: top;
+  will-change: transform;
+
+  &:hover {
+    transform: scale3D(1.025, 1.025, 1);
+    box-shadow: 10px 20px 20px color(bg, highlight);
+  }
+
+  @include breakpoint--small-and-down {
+    display: block; margin: 0 auto; width: 70%;
+  }
+}
