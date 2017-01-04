@@ -86,7 +86,7 @@
   }
 }
 
-svg:not([role]) { display: none; }
+#social-link-symbols { display: none; }
 
 @keyframes social-links__icon--animate {
   0% { transform: scale3D(1, 1, 1); }
