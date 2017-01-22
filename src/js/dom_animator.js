@@ -92,7 +92,8 @@ class DomAnimManager {
 
   static start() {
     const elements = document.querySelectorAll('[data-anim-name]');
-    elements.forEach(element => domAnimationCache.push(new DomAnimationElement(element)));
+    Array.from(elements).forEach(element =>
+      domAnimationCache.push(new DomAnimationElement(element)));
 
     window.addEventListener('scroll', () => this.scrollHandler());
     window.addEventListener('resize', () => {
