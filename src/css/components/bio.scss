@@ -6,29 +6,33 @@
 .about__title { @include content-title; }
 
 .about__bio {
+  @include breakpoint--small-and-down {
+    margin-bottom: 2rem;
+    padding: 0;
+    width: 100%;
+  }
+
   display: inline-block;
   padding-right: 5%;
   width: 65%;
-
-  @include breakpoint--small-and-down {
-    margin-bottom: 2rem; padding: 0; width: 100%;
-  }
 }
 
 .about__photo {
   border-radius: 50%;
   box-shadow: 0 0 0 color(bg, highlight);
-  width: 35%;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: box-shadow .3s ease, transform .3s ease;
   vertical-align: top;
+  width: 35%;
   will-change: transform;
 
   &:hover {
-    transform: scale3D(1.025, 1.025, 1);
     box-shadow: 10px 20px 20px color(bg, highlight);
+    transform: scale3d(1.025, 1.025, 1);
   }
 
   @include breakpoint--small-and-down {
-    display: block; margin: 0 auto; width: 70%;
+    display: block;
+    margin: 0 auto;
+    width: 70%;
   }
 }

@@ -1,7 +1,7 @@
 .header {
   @include content-cntnr;
   background: color(bg, header);
-  border-top: 0.2em solid color(font, highlight);
+  border-top: .2em solid color(font, highlight);
   box-shadow: inset 0 -20em 20em -10em darken(color(bg, header), 5%);
   padding: $breakpoint__unit--padding 5%;
   position: relative;
@@ -19,35 +19,44 @@
   font-size: 2.5em;
   position: relative;
 
-  .header__title:not(.show) & { opacity: 0; }
+  .header__title {
+    &:not(.show) & { opacity: 0; }
+  }
 
   .header__title.show & {
-    animation: header-title--animate 0.5s ease-in-out;
+    animation: header-title--animate .5s ease-in-out;
     opacity: 1;
   }
 
   &::after {
     background-color: darken(color(bg, header), 12%);
-    bottom: 0.06em;
+    bottom: .06em;
     content: '';
-    height: 0.04em;
+    height: .04em;
     left: 0;
     position: absolute;
-    transition: opacity 0.3s ease 0.5s, transform 0.3s ease 0.5s;
+    transition: opacity .3s ease .5s, transform .3s ease .5s;
     width: 100%;
 
-    .header__title:not(.show) & { opacity: 0; transform: scale3D(0, 1, 1); }
-    .header__title.show & { opacity: 1; transform: scale3D(1, 1, 1); }
+    .header__title:not(.show) & {
+      opacity: 0;
+      transform: scale3d(0, 1, 1);
+    }
+
+    .header__title.show & {
+      opacity: 1;
+      transform: scale3d(1, 1, 1);
+    }
   }
 }
 
 .header__subtitle {
   color: color(font, highlight);
-  transition: opacity 0.3s ease 0.6s, transform 0.3s ease 0.6s;
+  transition: opacity .3s ease .6s, transform .3s ease .6s;
 
   .header__title:not(.show) & {
     opacity: 0;
-    transform: translate3D(0, 50%, 0);
+    transform: translate3d(0, 50%, 0);
   }
 
   .header__title.show & {
@@ -62,8 +71,16 @@
 }
 
 @keyframes header-title--animate {
-  0% { transform: scale3D(0, 0, 1); opacity: 0; }
-  60% { transform: scale3D(1.2, 1.2, 1); opacity: 1; }
-  80% { transform: scale3D(0.9, 0.9, 1); }
-  100% { transform: scale3D(1, 1, 1); }
+  0% {
+    opacity: 0;
+    transform: scale3d(0, 0, 1);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.2, 1.2, 1);
+  }
+
+  80% { transform: scale3d(.9, .9, 1); }
+  100% { transform: none; }
 }

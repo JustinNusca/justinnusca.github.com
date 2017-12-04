@@ -1,4 +1,11 @@
 body {
+  @include breakpoint--small-and-up {
+    font-size: #{$breakpoint__font-size--default}rem;
+  }
+  @include breakpoint--small-and-down {
+    font-size: #{$breakpoint__font-size--small}rem;
+  }
+
   background: color(bg);
   color: color(font);
   font-family: font(body);
@@ -8,12 +15,10 @@ body {
   min-height: 100vh;
   min-width: $breakpoint__width--min;
   user-select: none;
-
-  @include breakpoint--small-and-up { font-size: 1.2em; }
-  @include breakpoint--small-and-down { font-size: 1em; }
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: font(headline);
   font-size: 2em;
   font-weight: normal;
@@ -24,12 +29,13 @@ h1, h2 {
 p {
   user-select: auto;
 
-  & + & { margin-top: 0.5rem; }
+  & + & { margin-top: .5rem; }
 }
 
 a { text-decoration: none; }
 
-input, textarea {
+input,
+textarea {
   font-family: font(body);
   font-size: 1em;
   line-height: 1.6;

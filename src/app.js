@@ -6,7 +6,6 @@ import Scene from './js/scene';
 import onFormSubmit, { formClassName } from './js/form';
 
 import './css/app.scss';
-import './css/inline.scss';
 
 (function header() {
   const canvas = document.getElementById('canvas');

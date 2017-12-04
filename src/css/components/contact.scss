@@ -7,11 +7,6 @@
 .contact__title { @include content-title; }
 
 .contact__section {
-  display: inline-block;
-  transition: transform 0.3s ease;
-  vertical-align: top;
-  will-change: transform;
-
   @include breakpoint--medium-and-up {
     width: 45%;
 
@@ -23,11 +18,18 @@
     width: 100%;
   }
 
-  .contact:not(.fail) &, .contact:not(.success) & {
-    transform: translate3D(0, -1.5em, 0);
+  display: inline-block;
+  transition: transform .3s ease;
+  vertical-align: top;
+  will-change: transform;
+
+  .contact:not(.fail) &,
+  .contact:not(.success) & {
+    transform: translate3d(0, -1.5em, 0);
   }
 
-  .contact.fail &, .contact.success & {
+  .contact.fail &,
+  .contact.success & {
     transform: none;
   }
 }
@@ -35,33 +37,41 @@
 .contact__label {
   color: color(font, highlight);
   display: block;
-  transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
+  transition: opacity .3s ease .1s, transform .3s ease .1s;
   will-change: opacity, transform;
 
-  &:not(.show) { opacity: 0; transform: translate3D(1.5em, 0, 0); }
-  &.show { opacity: 1; transform: none; }
+  &:not(.show) {
+    opacity: 0;
+    transform: translate3d(1.5em, 0, 0);
+  }
+
+  &.show {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .contact__feedback {
-  align-items: center;
-  border: 0.2em solid transparent;
-  display: flex;
-  height: 3em;
-  justify-content: center;
-  margin: -1em auto 0.5em;
-  padding: 0 0.5em;
-  text-align: center;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  width: 80%;
-  will-change: background-color, border-color, color, opacity;
-
   @include breakpoint--medium-and-up { width: 80%; }
   @include breakpoint--medium-and-down { width: 100%; }
   @include breakpoint--tiny { height: 4em; }
 
-  .contact:not(.fail) &, .contact:not(.success) & {
+  align-items: center;
+  border: .2em solid transparent;
+  display: flex;
+  height: 3em;
+  justify-content: center;
+  margin: -1em auto .5em;
+  padding: 0 .5em;
+  text-align: center;
+  transition: opacity .3s ease, transform .3s ease;
+  width: 80%;
+  will-change: background-color, border-color, color, opacity;
+
+  .contact:not(.fail) &,
+  .contact:not(.success) & {
     opacity: 0;
-    transform: translate3D(0, 1.5em, 0);
+    transform: translate3d(0, 1.5em, 0);
   }
 
   .contact.fail & {
@@ -83,37 +93,42 @@
 
 .contact__field {
   appearance: none;
-  border: none;
-  border-bottom: 0.2em solid color(bg, highlight);
+  border: 0;
+  border-bottom: .2em solid color(bg, highlight);
   border-radius: 0;
-  margin: 0.5em 0 1em;
-  padding: 0.25em;
-  transition: all 0.3s ease;
+  margin: .5em 0 1em;
+  padding: .25em;
+  transition: border .3s ease;
   width: 100%;
   will-change: border;
 
-  &:active, &:focus {
+  &:active,
+  &:focus {
     border-color: color(font, activeLink);
     outline: 0;
   }
 
-  &:not(:placeholder-shown):invalid { border-bottom-color: color(states, invalid); }
+  &:not(:placeholder-shown):invalid {
+    border-bottom-color: color(states, invalid);
+  }
+
   &:not(:focus):valid { border-bottom-color: color(states, valid); }
 }
 
 .contact__message {
   appearance: none;
-  border: 0.2em solid color(bg, highlight);
+  border: .2em solid color(bg, highlight);
   border-radius: 0;
   height: 8em;
-  margin: 0.5em 0 1em;
-  padding: 0.5em;
+  margin: .5em 0 1em;
+  padding: .5em;
   resize: vertical;
-  transition: border 0.3s ease;
+  transition: border .3s ease;
   width: 100%;
   will-change: border;
 
-  &:active, &:focus {
+  &:active,
+  &:focus {
     border-color: color(font, activeLink);
     outline: 0;
   }
@@ -122,7 +137,7 @@
 .contact__submit {
   appearance: none;
   background: transparent;
-  border: 0.2rem solid color(font, activeLink);
+  border: .2rem solid color(font, activeLink);
   border-radius: 0;
   color: color(font, activeLink);
   font-size: 1em;
@@ -130,11 +145,12 @@
   outline: 0;
   position: relative;
   text-transform: uppercase;
-  transition: all 0.2s ease;
+  transition: background .2s ease, border .2s ease, color .2s ease;
   width: 10rem;
   will-change: background, border, color;
 
-  &:active, &:focus {
+  &:active,
+  &:focus {
     background: color(font, activeLink);
     color: color(bg, content);
     outline: 0;
@@ -158,14 +174,14 @@
   opacity: 0;
   position: absolute;
   top: 0;
-  transform: translate3D(50%, 0, 0);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translate3d(50%, 0, 0);
+  transition: opacity .2s ease, transform .2s ease;
   width: 100%;
 
-  &:before {
+  &::before {
+    border: .2rem solid color(bg, content);
     border-radius: 50%;
-    border: 0.2rem solid color(bg, content);
-    border-top-color: rgba(color(bg, content), 0.25);
+    border-top-color: rgba(color(bg, content), .25);
     bottom: 0;
     content: '';
     height: 2rem;
@@ -183,14 +199,14 @@
     opacity: 1;
     transform: none;
 
-    &:before {
-      animation: spinner 0.6s linear infinite;
+    &::before {
+      animation: spinner .6s linear infinite;
     }
   }
 
   .contact.success & {
     opacity: 0;
-    transform: translate3D(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
@@ -201,14 +217,14 @@
   font-size: 2em;
   height: 2rem;
   left: 0;
-  line-height: 0.8;
+  line-height: .8;
   margin: auto;
   opacity: 0;
   position: absolute;
   right: 0;
   top: 0;
-  transform: translate3D(50%, 0, 0);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translate3d(50%, 0, 0);
+  transition: opacity .2s ease, transform .2s ease;
   width: 2rem;
 
   .contact.success & {

@@ -1,11 +1,20 @@
-// === CONFIGS
+// == CONFIGS ==================================================================
 @import './config/grid';
 @import './config/variables';
 
-// === FONT IMPORT
+// == FONT IMPORT ==============================================================
+// sass-lint:disable no-url-domains, no-url-protocols
 @import url('https://fonts.googleapis.com/css?family=Quicksand|Oswald');
+// sass-lint:enable
 
-// === COMPONENTS
+// == RESET ====================================================================
+@import './config/reset';
+
+// == COMPONENTS ===============================================================
+@import './components/bio';
 @import './components/contact';
 @import './components/footer';
+@import './components/header';
+@import './components/links';
 @import './components/social-links';
+@import './components/typography';

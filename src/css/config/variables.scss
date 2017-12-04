@@ -1,4 +1,4 @@
-// COLORS
+// == COLORS ===================================================================
 $clr__dark-purple: #444F5D;
 $clr__light-pink: #F19B9F;
 
@@ -36,7 +36,7 @@ $colors: (
   @return map-get(map-get($colors, $category), $type);
 }
 
-// TYPOGRAPHY
+// == TYPOGRAPHY ===============================================================
 $fonts: (
   body: ('Quicksand', 'Helvetica Neue', Helvetica, Arial, sans-serif),
   headline: ('Oswald', 'Helvetica Neue', Helvetica, Arial, sans-serif)
@@ -46,14 +46,14 @@ $fonts: (
   @return map-get($fonts, $category);
 };
 
-// STUFF
-@mixin content-cntnr() {
+// == MIXING ===================================================================
+@mixin content-cntnr {
   margin: 0 auto;
   max-width: $breakpoint__width--large;
   padding: $breakpoint__unit--padding 10%;
 }
 
-@mixin content-title() {
+@mixin content-title {
   color: color(font, headline);
   margin-bottom: 1em;
 }

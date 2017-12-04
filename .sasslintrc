@@ -1,0 +1,21 @@
+files:
+  include: 'src/css/**/*'
+  ignore:
+    - 'node_modules/'
+rules:
+  class-name-format:
+    - 1
+    - convention: hyphenatedbem
+  force-element-nesting:
+    - 0
+  force-pseudo-nesting:
+    - 0
+  hex-notation:
+    - 1
+    - style: uppercase
+  no-color-literals:
+    - 1
+    - allow-rgba: true
+  variable-name-format:
+    - 1
+    - convention: hyphenatedbem

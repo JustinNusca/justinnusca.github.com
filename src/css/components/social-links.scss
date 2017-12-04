@@ -6,10 +6,6 @@
 }
 
 .social-link {
-  display: inline-block;
-  perspective: 800px;
-  position: relative;
-
   @include breakpoint--medium-and-up {
     height: 3em;
     width: 3em;
@@ -31,16 +27,27 @@
     & + & { margin-left: 2em; }
   }
 
+  display: inline-block;
+  perspective: 800px;
+  position: relative;
+
   @for $i from 1 through 4 {
-    $delay: 0.1s * $i;
+    $delay: .1s * $i;
 
     &:nth-child(#{$i}) {
-      transition: opacity 0.3s ease $delay, transform 0.3s ease $delay;
+      transition: opacity .3s ease $delay, transform .3s ease $delay;
     }
   }
 
-  .show & { opacity: 1; transform: none; }
-  .social-links:not(.show) & { opacity: 0; transform: translate3D(0, 75%, 0); }
+  .show & {
+    opacity: 1;
+    transform: none;
+  }
+
+  .social-links:not(.show) & {
+    opacity: 0;
+    transform: translate3d(0, 75%, 0);
+  }
 }
 
 .social-link__icon {
@@ -68,30 +75,29 @@
     left: -20%;
     position: absolute;
     top: -20%;
-    transform: scale3D(0, 0, 1);
-    transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    transform: scale3d(0, 0, 1);
+    transition: transform .3s cubic-bezier(.19, 1, .22, 1);
     width: 140%;
     will-change: transform;
   }
 
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     outline: 0;
 
-    &::before{ transform: none; }
+    &::before { transform: none; }
 
     .social-link__icon {
-      animation: social-links__icon--animate 0.3s ease-in-out;
-      transform: scale3D(0.8, 0.8, 1);
+      animation: social-links__icon-animate .3s ease-in-out;
+      transform: scale3d(.8, .8, 1);
     }
   }
 }
 
-#social-link-symbols { display: none; }
-
-@keyframes social-links__icon--animate {
-  0% { transform: scale3D(1, 1, 1); }
-  20% { transform: scale3D(1.1, 1.2, 1); }
-  60% { transform: scale3D(0.7, 0.7, 1); }
-  80% { transform: scale3D(0.9, 0.9, 1); }
-  100% { transform: scale3D(0.8, 0.8, 1); }
+@keyframes social-links__icon-animate {
+  0% { transform: scale3d(1, 1, 1); }
+  20% { transform: scale3d(1.1, 1.2, 1); }
+  60% { transform: scale3d(.7, .7, 1); }
+  80% { transform: scale3d(.9, .9, 1); }
+  100% { transform: scale3d(.8, .8, 1); }
 }
