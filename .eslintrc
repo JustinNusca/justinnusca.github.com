@@ -1,9 +1,6 @@
-{
-  root: true,
-  env: {
-    es6: true,
-    browser: true,
-    node: true
-  },
-  extends: 'airbnb'
-}
+root: true
+env:
+  es6: true,
+  browser: true,
+  node: true
+extends: 'airbnb'
