@@ -9,21 +9,63 @@ class Animation {
     this.onAnimationEnd = onAnimationEnd;
   }
 
-  drawFlippedFrame(canvasContext, offsetX, offsetY,
-    offsetWidth, offsetHeight, xPosition, yPosition, drawWidth, drawHeight) {
+  drawFlippedFrame(
+    canvasContext,
+    offsetX,
+    offsetY,
+    offsetWidth,
+    offsetHeight,
+    xPosition,
+    yPosition,
+    drawWidth,
+    drawHeight,
+  ) {
     canvasContext.save();
     canvasContext.translate(canvasContext.canvas.width, 0);
     canvasContext.scale(-1, 1);
 
-    canvasContext.drawImage(this.spriteAsset, offsetX, offsetY, offsetWidth,
-      offsetHeight, xPosition, yPosition, drawWidth, drawHeight);
+    canvasContext.drawImage(
+      this.spriteAsset,
+      offsetX,
+      offsetY,
+      offsetWidth,
+      offsetHeight,
+      xPosition,
+      yPosition,
+      drawWidth,
+      drawHeight,
+    );
     canvasContext.restore();
   }
 
-  drawFrame(canvasContext, offsetX, offsetY,
-    offsetWidth, offsetHeight, xPosition, yPosition, drawWidth, drawHeight) {
-    canvasContext.drawImage(this.spriteAsset, offsetX, offsetY, offsetWidth,
-      offsetHeight, xPosition, yPosition, drawWidth, drawHeight);
+  drawFrame(
+    canvasContext,
+    offsetX,
+    offsetY,
+    offsetWidth,
+    offsetHeight,
+    xPosition,
+    yPosition,
+    drawWidth,
+    drawHeight,
+  ) {
+    canvasContext.drawImage(
+      this.spriteAsset,
+      offsetX,
+      offsetY,
+      offsetWidth,
+      offsetHeight,
+      xPosition,
+      yPosition,
+      drawWidth,
+      drawHeight,
+    );
+  }
+
+  static getRandomDuration() {
+    return Math.floor((
+      Math.random() * (MAX_ACTIVITY_DURATION - MIN_ACTIVITY_DURATION)
+    ) + MIN_ACTIVITY_DURATION);
   }
 
   getCurrAnimDuration() {
@@ -31,9 +73,9 @@ class Animation {
 
     const currAnim = this.animations[this.currAnimIndex];
 
-    return currAnim.looping ?
-      Math.floor((Math.random() * (MAX_ACTIVITY_DURATION - MIN_ACTIVITY_DURATION))
-        + MIN_ACTIVITY_DURATION) : (1000 / 60) * currAnim.totalFrames * currAnim.frameRate;
+    return currAnim.looping
+      ? this.getRandomDuration()
+      : (1000 / 60) * currAnim.totalFrames * currAnim.frameRate;
   }
 
   getDrawHeight(canvasContext) {
@@ -65,11 +107,29 @@ class Animation {
 
     if (!facingRight && currAnim.flippable) {
       const inverseXPosition = (drawWidth * (currAnim.xScale - 1)) - xPosition;
-      this.drawFlippedFrame(canvasContext, offsetX, offsetY, offsetWidth, offsetHeight,
-        inverseXPosition, yPosition, drawWidth, drawHeight);
+      this.drawFlippedFrame(
+        canvasContext,
+        offsetX,
+        offsetY,
+        offsetWidth,
+        offsetHeight,
+        inverseXPosition,
+        yPosition,
+        drawWidth,
+        drawHeight,
+      );
     } else {
-      this.drawFrame(canvasContext, offsetX, offsetY, offsetWidth, offsetHeight,
-        xPosition, yPosition, drawWidth, drawHeight);
+      this.drawFrame(
+        canvasContext,
+        offsetX,
+        offsetY,
+        offsetWidth,
+        offsetHeight,
+        xPosition,
+        yPosition,
+        drawWidth,
+        drawHeight,
+      );
     }
 
     this.incrementFrame();
@@ -93,7 +153,8 @@ class Animation {
     this.currAnimIndex = index;
     this.currFrame = 0;
     this.frameCount = 0;
-    this.spriteAsset = SpriteLoader.getSpriteForReference(currAnim.spriteReference);
+    this.spriteAsset =
+      SpriteLoader.getSpriteForReference(currAnim.spriteReference);
 
     if (!currAnim.static) {
       this.duration = this.getCurrAnimDuration();

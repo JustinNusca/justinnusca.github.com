@@ -76,17 +76,19 @@ class DomAnimManager {
   }
 
   static resetOffsets() {
-    domAnimationCache.forEach(element => requestAnimationFrame(() => element.resetOffsetY()));
+    domAnimationCache.forEach(element =>
+      requestAnimationFrame(() => element.resetOffsetY()));
   }
 
-  static scrollCallback() {
+  scrollCallback() {
     if (this.scrolled) {
       this.scrolled = false;
-      domAnimationCache.forEach(element => requestAnimationFrame(() => element.animate()));
+      domAnimationCache.forEach(element =>
+        requestAnimationFrame(() => element.animate()));
     }
   }
 
-  static scrollHandler() {
+  scrollHandler() {
     this.scrolled = true;
   }
 
