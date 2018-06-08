@@ -1,0 +1,107 @@
+// sass-lint:disable no-ids
+#social-link-symbols { display: none; }
+// sass-lint:enable
+
+.social-links {
+  @include content-cntnr;
+  background: color(bg, footer);
+  list-style: none;
+  text-align: center;
+}
+
+.social-link {
+  @include breakpoint--medium-and-up {
+    height: 3em;
+    width: 3em;
+
+    & + & { margin-left: 6em; }
+  }
+
+  @include breakpoint--medium-to-small {
+    height: 2.5em;
+    width: 2.5em;
+
+    & + & { margin-left: 3em; }
+  }
+
+  @include breakpoint--small-and-down {
+    height: 2em;
+    width: 2em;
+
+    & + & { margin-left: 2em; }
+  }
+
+  display: inline-block;
+  perspective: 800;
+  position: relative;
+
+  @for $i from 1 through 4 {
+    $delay: .1s * $i;
+
+    .show &:nth-child(#{$i}) {
+      transition: opacity .3s ease $delay, transform .3s ease $delay;
+    }
+  }
+
+  .show & {
+    opacity: 1;
+    transform: none;
+  }
+
+  .social-links:not(.show) & {
+    opacity: 0;
+    transform: translate3d(0, 75%, 0);
+  }
+}
+
+.social-link__icon {
+  fill: color(bg, content);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  will-change: transform;
+}
+
+.social-link__link {
+  display: inline-block;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  &::before {
+    background: darken(color(bg, footer), 15%);
+    border-radius: 50%;
+    content: '';
+    height: 140%;
+    left: -20%;
+    position: absolute;
+    top: -20%;
+    transform: scale3d(0, 0, 1);
+    transition: transform .3s cubic-bezier(.19, 1, .22, 1);
+    width: 140%;
+    will-change: transform;
+  }
+
+  &:focus,
+  &:hover {
+    outline: 0;
+
+    &::before { transform: none; }
+
+    .social-link__icon {
+      animation: social-links__icon-animate .3s ease-in-out;
+      transform: scale3d(.8, .8, 1);
+    }
+  }
+}
+
+@keyframes social-links__icon-animate {
+  0% { transform: scale3d(1, 1, 1); }
+  20% { transform: scale3d(1.1, 1.2, 1); }
+  60% { transform: scale3d(.7, .7, 1); }
+  80% { transform: scale3d(.9, .9, 1); }
+  100% { transform: scale3d(.8, .8, 1); }
+}

@@ -1,0 +1,51 @@
+$breakpoint__font-size--default: 1.2;
+$breakpoint__font-size--small: 1;
+
+$breakpoint__unit--padding: 5em;
+
+$breakpoint__width--large: 1300px;
+$breakpoint__width--medium: 1024px;
+$breakpoint__width--small: 600px;
+$breakpoint__width--tiny: 480px;
+$breakpoint__width--min: 320px;
+
+@mixin breakpoint--medium($breakpoint: $breakpoint__width--medium) {
+  @media only screen and (max-width: $breakpoint)
+  and (min-width: $breakpoint__width--small) {
+    @content;
+  }
+}
+
+@mixin breakpoint--small($breakpoint: $breakpoint__width--small) {
+  @media only screen and (max-width: $breakpoint)
+  and (min-width: $breakpoint__width--tiny) {
+    @content;
+  }
+}
+
+@mixin breakpoint--tiny($breakpoint: $breakpoint__width--tiny) {
+  @media only screen and (max-width: $breakpoint) { @content; }
+}
+
+@mixin breakpoint--medium-to-small($breakpoint: $breakpoint__width--medium) {
+  @media only screen and (max-width: $breakpoint)
+  and (min-width: $breakpoint__width--tiny + 1) {
+    @content;
+  }
+}
+
+@mixin breakpoint--medium-and-up($breakpoint: $breakpoint__width--medium + 1) {
+  @media only screen and (min-width: $breakpoint) { @content; }
+}
+
+@mixin breakpoint--medium-and-down($breakpoint: $breakpoint__width--medium) {
+  @media only screen and (max-width: $breakpoint) { @content; }
+}
+
+@mixin breakpoint--small-and-up($breakpoint: $breakpoint__width--small + 1) {
+  @media only screen and (min-width: $breakpoint) { @content; }
+}
+
+@mixin breakpoint--small-and-down($breakpoint: $breakpoint__width--small) {
+  @media only screen and (max-width: $breakpoint) { @content; }
+}
